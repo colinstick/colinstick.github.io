@@ -8,7 +8,7 @@
     --border: #333;
 }
 
-/* Global links → accent color */
+/* Global links, accent color */
 a {
     color: var(--accent);
     text-decoration: underline;
