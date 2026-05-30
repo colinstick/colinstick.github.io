@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colin Stack</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="main-view">
+        <header class="hero">
+            <h1 class="anim">Colin Stack</h1>
+            <p class="about-me anim delay-1">
+                Hey I'm a CS student at UT Austin and I like making stuff 😋
+            </p>
+        </header>
+
+        <section class="controls anim delay-2">
+            <input type="text" id="search-bar" placeholder="Search projects by title or tag...">
+        
+            <select id="sort-select">
+                <option value="">Sort By</option>
+                <option value="name">Name (A → Z)</option>
+                <option value="date-new">Date (Newest → Oldest)</option>
+                <option value="date-old">Date (Oldest → Newest)</option>
+            </select>
+        </section>
+
+        <main id="project-grid" class="grid-container">
+            </main>
+    </div>
+
+    <div id="detail-view" class="hidden">
+        <button id="back-btn">← Back to Projects</button>
+        <article id="markdown-content" class="blog-post">
+            </article>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
