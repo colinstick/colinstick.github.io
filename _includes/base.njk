@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} — {% endif %}Colin Stack</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="nav-home">Colin Stack</a> --
+        <a href="/">projects</a> ⚬
+        <a href="/blog/">blog</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <nav> made by Colin Stack ⚬ 
+      <a href="https://github.com/colinstick" target="_blank"><u>github</u></a> ⚬  
+      <a href="https://www.linkedin.com/in/colin-stack-07093b23a/" target="_blank"><u>linkedin</u></a> ⚬ 
+      <a href="https://www.youtube.com/@colinstack4549" target="_blank"><u>youtube</u></a> ⚬ 
+      <a href="mailto:colinstack123@gmail.com"><u>colinstack123@gmail.com</u></a>
+    </nav>
+  </footer>
+</body>
+</html>
