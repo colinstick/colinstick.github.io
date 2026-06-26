@@ -351,14 +351,12 @@ footer a:hover { color: var(--accent); }
     margin: 0;
 }
 
-.post-content {
-    margin: 2rem 2rem;
+.post-content p {
+    margin: 1rem 2rem;
+    margin-bottom: 1rem; 
 }
 
 
-p {
-    margin-block: 1.5em; 
-}
 
 /* Target pre tags specifically containing code for a semantic block layout */
 pre:has(code) {
