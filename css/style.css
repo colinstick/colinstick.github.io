@@ -354,3 +354,35 @@ footer a:hover { color: var(--accent); }
 .post-content {
     margin: 2rem 2rem;
 }
+
+
+p {
+    margin-block: 1.5em; 
+}
+
+/* Target pre tags specifically containing code for a semantic block layout */
+pre:has(code) {
+    /* Colors & Theme (Dark Mode Inspired) */
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border: 1px solid #313244;
+    border-radius: 8px;
+  
+    /* Typography */
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    tab-size: 4; /* Controls width of tab indents */
+  
+    /* Layout & Spacing */
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    max-width: 100%;
+  
+    /* Overflow & Wrapping Handling */
+    overflow-x: auto; /* Adds a clean horizontal scrollbar when needed */
+    white-space: pre; /* Forces code onto single line with scrolling */
+    
+    /* Smooth scrolling on mobile devices */
+    -webkit-overflow-scrolling: touch; 
+  }
