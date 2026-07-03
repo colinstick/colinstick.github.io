@@ -31,6 +31,22 @@ module.exports = function(eleventyConfig) {
     return [...tagSet].sort();
   });
 
+  // Transform that modifies all links in the final HTML build
+  eleventyConfig.addTransform("force-external-links", function(content) {
+    // Only target HTML files
+    if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+      
+      // Matches <a href="..."> but ignores links starting with /, #, or your own domain
+      const modifiedContent = content.replace(
+        /<a\s+([^>]*?)href="(?!(?:https?:\/\/yourdomain\.com|\/|#))([^"]+)"([^>]*?)>/gi,
+        '<a $1href="$2"$3 target="_blank" rel="noopener noreferrer">'
+      );
+      
+      return modifiedContent;
+    }
+    return content;
+  });
+
   return {
     dir: {
       input: ".",
