@@ -141,18 +141,25 @@ footer a:hover { color: var(--accent); }
 }
 
 .project-card {
-    display: block;
+    position: relative;
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 6px;
-    text-decoration: none;
-    color: var(--text-main);
     transition: transform 0.15s, border-color 0.15s;
     overflow: hidden;
 }
 .project-card:hover {
     transform: translateY(-10px);
     border-color: var(--accent);
+    text-decoration: none;
+}
+
+.card-content-link {
+    display: block;
+    color: var(--text-main);
+    text-decoration: none;
+}
+.card-content-link:hover {
     text-decoration: none;
 }
 
@@ -164,12 +171,57 @@ footer a:hover { color: var(--accent); }
     border-bottom: 1px solid var(--border);
 }
 
-.card-inner { padding: 1.25rem; }
+.card-inner {
+    padding: 1.25rem;
+}
+
+.card-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.45rem;
+    flex-shrink: 0;
+}
+
+.card-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.card-action-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.card-action-play {
+    width: 2rem;
+    padding: 0;
+    font-size: 0.85rem;
+}
 
 .project-card h2 {
     font-size: 1.05rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
 }
 
 .project-desc {
@@ -222,6 +274,12 @@ footer a:hover { color: var(--accent); }
 .project-link {
     font-size: 0.9rem;
     font-weight: 700;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
 }
 
 .divider {

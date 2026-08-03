@@ -5,7 +5,8 @@ description: "A party game that mixes social deduction with trivia!"
 tags: ["Godot", "HTML/CSS", "JavaScript", "art", "game"]
 date: 2024-10-01
 image: "/assets/images/skoold/SK-logo.png"
-link: "https://github.com/colinstick/skoold"
+link: ""
+github: "https://github.com/colinstick/skoold"
 ---
 
 ## Overview
