@@ -18,7 +18,12 @@ title: "Projects"
   <div class="tag-filter">
     <button class="tag-btn active" data-tag="all">all</button>
     {% for tag in collections.projectTags %}
-      <button class="tag-btn" data-tag="{{ tag }}">{{ tag }}</button>
+      {% set customTagColor = tag | tagColor(tagColors) %}
+      <button
+        class="tag-btn"
+        data-tag="{{ tag }}"
+        {% if customTagColor %}style="--tag-color: {{ customTagColor }}"{% endif %}
+      >{{ tag }}</button>
     {% endfor %}
   </div>
 
@@ -46,7 +51,8 @@ title: "Projects"
           <p class="project-desc">{{ project.data.description | safe }}</p>
           <div class="tag-list">
             {% for tag in project.data.tags %}
-              <span class="tag">{{ tag }}</span>
+              {% set customTagColor = tag | tagColor(tagColors) %}
+              <span class="tag" {% if customTagColor %}style="--tag-color: {{ customTagColor }}"{% endif %}>{{ tag }}</span>
             {% endfor %}
           </div>
         </div>
