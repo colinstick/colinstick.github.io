@@ -18,6 +18,15 @@
     font-display: swap;
 }
 
+/* Colin Handwriting - Regular */
+@font-face {
+    font-family: 'Colin Handwriting';
+    src: url('/assets/fonts/colinhandwriting/Colinhandwriting-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --bg-color: #121212;
     --card-bg: #1e1e1e;
@@ -88,7 +97,7 @@ footer a:hover { color: var(--accent); }
 
 .intro {
     margin-bottom: 3rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--text-main);
 }
 
@@ -142,7 +151,7 @@ footer a:hover { color: var(--accent); }
     overflow: hidden;
 }
 .project-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-10px);
     border-color: var(--accent);
     text-decoration: none;
 }
@@ -194,9 +203,9 @@ footer a:hover { color: var(--accent); }
 .project-header .tag-list { margin-top: 0.75rem; margin-bottom: 0.85rem; }
 
 .project-header h1 {
-    font-size: 1.85rem;
+    font-size: 2rem;
     line-height: 1.2;
-    margin-bottom: 0.35rem;
+    margin-bottom: 1rem;
     font-weight: 700;
 }
 
@@ -313,6 +322,12 @@ footer a:hover { color: var(--accent); }
     header, main, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
     .projects-grid { grid-template-columns: 1fr; }
     .carousel img { height: 180px; }
+}
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .post-item {

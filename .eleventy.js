@@ -30,6 +30,7 @@ module.exports = function(eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("js");
 
   // Create a collection of all projects
   eleventyConfig.addCollection("projects", function(collectionApi) {
