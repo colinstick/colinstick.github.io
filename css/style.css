@@ -98,11 +98,13 @@ footer a:hover { color: var(--accent); }
 .intro {
     margin-bottom: 3rem;
     font-size: 2rem;
+    font-family: "Colin Handwriting";
     color: var(--text-main);
 }
 
 .intro-sub {
     color: var(--text-main);
+    font-family: "Alte Haas Grotesk";
     font-size: 1.0rem;
 }
 
@@ -214,7 +216,7 @@ footer a:hover { color: var(--accent); }
     text-decoration: none;
 }
 
-.card-action-play {
+.card-action {
     width: 2rem;
     padding: 0;
     font-size: 0.85rem;
