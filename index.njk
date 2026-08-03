@@ -20,7 +20,8 @@ title: "Projects"
     {% for tag in collections.projectTags %}
       {% set customTagColor = tag | tagColor(tagColors) %}
       <button
-        class="tag-btn"
+        class="tag-btn boil"
+        data-boil-hover="true"
         data-tag="{{ tag }}"
         {% if customTagColor %}style="--tag-color: {{ customTagColor }}"{% endif %}
       >{{ tag }}</button>

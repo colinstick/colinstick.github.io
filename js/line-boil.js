@@ -82,8 +82,18 @@
         var scale = parseFloat(el.dataset.boilScale) || DEFAULT_SCALE;
         var speed = parseInt(el.dataset.boilSpeed, 10) || DEFAULT_SPEED;
         var frames = Math.min(Math.max(parseInt(el.dataset.boilFrames, 10) || DEFAULT_FRAMES, 2), MAX_FRAMES);
+        var hoverOnly = el.dataset.boilHover === 'true';
+
         ensureFilters(scale, frames);
-        next.push({ el: el, scale: scale, speed: speed, frames: frames, frame: 0, lastTick: performance.now() });
+        next.push({ 
+          el: el, 
+          scale: scale, 
+          speed: speed, 
+          frames: frames,
+          hoverOnly: hoverOnly,
+          frame: 0, 
+          lastTick: performance.now() 
+        });
       }
     }
     entries = next;
@@ -92,6 +102,13 @@
   function tick(now) {
     for (var i = 0; i < entries.length; i++) {
       var e = entries[i];
+
+      // only animate while hovered if requested
+      if(e.hoverOnly && !e.el.matches(':hover')) {
+        e.el.style.filter = '';
+        continue;
+      }
+
       if (now - e.lastTick >= e.speed) {
         e.frame = (e.frame + 1) % e.frames;
         e.el.style.filter = 'url(#boil-' + setKey(e.scale, e.frames) + '-' + e.frame + ')';
