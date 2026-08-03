@@ -6,7 +6,8 @@ layout: base.njk
   <header class="project-header">
     <div class="tag-list">
       {% for tag in tags %}
-        <span class="tag">{{ tag }}</span>
+        {% set customTagColor = tag | tagColor(tagColors) %}
+        <span class="tag" {% if customTagColor %}style="--tag-color: {{ customTagColor }}"{% endif %}>{{ tag }}</span>
       {% endfor %}
     </div>
     <h1>{{ title }}</h1>

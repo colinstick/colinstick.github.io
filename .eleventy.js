@@ -1,4 +1,25 @@
 module.exports = function(eleventyConfig) {
+  const normalizeTag = (value) => String(value ?? "").trim().toLowerCase();
+
+  const findTagColor = (tag, tagColors) => {
+    if (!tag || !tagColors || typeof tagColors !== "object") {
+      return undefined;
+    }
+
+    if (Object.prototype.hasOwnProperty.call(tagColors, tag)) {
+      return tagColors[tag];
+    }
+
+    const normalizedTag = normalizeTag(tag);
+    for (const [tagName, color] of Object.entries(tagColors)) {
+      if (normalizeTag(tagName) === normalizedTag) {
+        return color;
+      }
+    }
+
+    return undefined;
+  };
+
   const getProjectEntries = (collectionApi) => {
     return collectionApi.getFilteredByGlob("projects/*.md");
   };
@@ -25,6 +46,10 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("fullDate", function(dateObj) {
     return new Date(dateObj).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  });
+
+  eleventyConfig.addFilter("tagColor", function(tag, tagColors) {
+    return findTagColor(tag, tagColors);
   });
 
   // Copy static assets

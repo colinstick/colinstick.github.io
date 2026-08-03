@@ -115,18 +115,20 @@ footer a:hover { color: var(--accent); }
 
 .tag-btn {
     background: var(--card-bg);
-    border: 1px solid var(--border);
+    border: 1px solid var(--tag-color, var(--border));
     border-radius: 3px;
     padding: 0.3rem 0.85rem;
     font-family: inherit;
     font-size: 0.82rem;
-    color: var(--text-muted);
+    color: var(--tag-color, var(--text-muted));
     cursor: pointer;
     transition: all 0.15s;
 }
 .tag-btn:hover {
-    border-color: var(--accent);
-    color: var(--text-main);
+    border-color: var(--tag-color, var(--accent));
+    color: var(--tag-color, var(--text-main));
+    transform: translateY(-1px);
+    box-shadow: 0 0 0 1px border-color;
 }
 .tag-btn.active {
     background: var(--accent);
@@ -239,11 +241,18 @@ footer a:hover { color: var(--accent); }
 
 .tag {
     background: var(--bg-color);
-    border: 1px solid var(--border);
-    color: var(--text-muted);
+    border: 1px solid var(--tag-color, var(--border));
+    color: var(--tag-color, var(--text-muted));
     font-size: 0.75rem;
     padding: 0.15rem 0.55rem;
     border-radius: 3px;
+}
+
+.tag:hover {
+    background: var(--card-bg);
+    border-color: var(--tag-color, var(--accent));
+    color: var(--tag-color, var(--text-main));
+    box-shadow: 0 0 0 1px border-color;
 }
 
 .project-header {
