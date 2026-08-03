@@ -6,6 +6,7 @@ tags: ["school", "C"]
 date: 2026-02-01
 image: "/assets/images/memory-allocator/cover.png"
 link: ""
+hidden: true
 ---
 
 ## Overview
