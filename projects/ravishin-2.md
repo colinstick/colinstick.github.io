@@ -10,7 +10,7 @@ link: "https://colinstick.itch.io/ravishin-2"
 
 ## Overview
 
-The sequel to *RAVISHIN'*, this game has a more robust battle system, a lengthier and more in depth story, improved animations, new characters, an episode system, and more! (Password to the itch.io page is `bigwishes`.)
+The sequel to [*RAVISHIN'*](/projects/ravishin), this game has a more robust battle system, a lengthier and more in depth story, improved animations, new characters, an episode system, and more! (Password to the itch.io page is `bigwishes`.)
 
 # Episode One
 ## Trailer
