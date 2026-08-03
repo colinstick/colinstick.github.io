@@ -86,7 +86,7 @@ module.exports = function(eleventyConfig) {
       // Matches <a href="..."> but ignores links starting with /, #, or your own domain
       const modifiedContent = content.replace(
         /<a\s+([^>]*?)href="(?!(?:https?:\/\/yourdomain\.com|\/|#))([^"]+)"([^>]*?)>/gi,
-        '<a $1href="$2"$3 target="_blank" rel="noopener noreferrer">'
+        '<a $1href="$2"$3 target="_blank" rel="noopener noreferrer"  class="boil" data-boil-hover="true">'
       );
       
       return modifiedContent;

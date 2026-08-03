@@ -41,10 +41,12 @@ title: "Projects"
             {% if project.data.link or project.data.github %}
               <div class="card-actions">
                 {% if project.data.link %}
-                  <a href="{{ project.data.link }}" class="card-action-btn card-action-play" aria-label="View project for {{ project.data.title }}" target="_blank" rel="noopener noreferrer">▶</a>
+                  <a href="{{ project.data.link }}" class="card-action-btn card-action boil" data-boil-hover="true" aria-label="View project for {{ project.data.title }}" target="_blank" rel="noopener noreferrer">
+                    <span class="material-icons">play_arrow</span></a>
                 {% endif %}
                 {% if project.data.github %}
-                  <a href="{{ project.data.github }}" class="card-action-btn card-action-github" aria-label="View github for {{ project.data.title }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a href="{{ project.data.github }}" class="card-action-btn card-action boil" data-boil-hover="true" aria-label="View github for {{ project.data.title }}" target="_blank" rel="noopener noreferrer">
+                    <span class="material-icons">code</span></a>
                 {% endif %}
               </div>
             {% endif %}
