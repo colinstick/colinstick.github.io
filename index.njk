@@ -19,7 +19,7 @@ title: "Projects"
   </div>
 
   <div class="projects-grid">
-    {% for project in collections.projects | reverse %}
+    {% for project in collections.projects %}
     <a href="{{ project.url }}" class="project-card" data-tags="{{ project.data.tags | join(',') }}">
       {% if project.data.image %}
         <img src="{{ project.data.image }}" alt="{{ project.data.title }}" class="card-thumb">

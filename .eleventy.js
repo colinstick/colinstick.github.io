@@ -1,4 +1,23 @@
 module.exports = function(eleventyConfig) {
+  const getProjectEntries = (collectionApi) => {
+    return collectionApi.getFilteredByGlob("projects/*.md");
+  };
+
+  const isVisibleProject = (item) => item.data.hidden !== true;
+
+  const byPinnedThenDateDesc = (a, b) => {
+    const aPinned = a.data.pinned === true;
+    const bPinned = b.data.pinned === true;
+
+    if (aPinned !== bPinned) {
+      return aPinned ? -1 : 1;
+    }
+
+    const aTime = new Date(a.date).getTime();
+    const bTime = new Date(b.date).getTime();
+    return bTime - aTime;
+  };
+
   // Custom date filter, e.g. {{ date | readableDate }} -> "Oct 2021"
   eleventyConfig.addFilter("readableDate", function(dateObj) {
     return new Date(dateObj).toLocaleDateString("en-US", { month: "short", year: "numeric" });
@@ -14,7 +33,9 @@ module.exports = function(eleventyConfig) {
 
   // Create a collection of all projects
   eleventyConfig.addCollection("projects", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("projects/*.md");
+    return getProjectEntries(collectionApi)
+      .filter(isVisibleProject)
+      .sort(byPinnedThenDateDesc);
   });
 
   // Create a collection of all blog posts, sorted newest first
@@ -25,10 +46,26 @@ module.exports = function(eleventyConfig) {
   // Collect all unique tags across projects
   eleventyConfig.addCollection("projectTags", function(collectionApi) {
     const tagSet = new Set();
-    collectionApi.getFilteredByGlob("projects/*.md").forEach(item => {
+    getProjectEntries(collectionApi).filter(isVisibleProject).forEach(item => {
       (item.data.tags || []).forEach(tag => tagSet.add(tag));
     });
     return [...tagSet].sort();
+  });
+
+  // Transform that modifies all links in the final HTML build
+  eleventyConfig.addTransform("force-external-links", function(content) {
+    // Only target HTML files
+    if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+      
+      // Matches <a href="..."> but ignores links starting with /, #, or your own domain
+      const modifiedContent = content.replace(
+        /<a\s+([^>]*?)href="(?!(?:https?:\/\/yourdomain\.com|\/|#))([^"]+)"([^>]*?)>/gi,
+        '<a $1href="$2"$3 target="_blank" rel="noopener noreferrer">'
+      );
+      
+      return modifiedContent;
+    }
+    return content;
   });
 
   return {

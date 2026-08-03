@@ -356,8 +356,6 @@ footer a:hover { color: var(--accent); }
     margin-bottom: 1rem; 
 }
 
-
-
 /* Target pre tags specifically containing code for a semantic block layout */
 pre:has(code) {
     /* Colors & Theme (Dark Mode Inspired) */
