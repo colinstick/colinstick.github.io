@@ -6,6 +6,7 @@ tags: ["school", "C"]
 date: 2026-01-01
 image: "/assets/images/command-interpreter/cover.png"
 link: ""
+hidden: true
 ---
 
 ## Overview
