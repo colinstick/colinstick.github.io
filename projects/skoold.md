@@ -2,7 +2,7 @@
 layout: project.njk
 title: "Skool'd"
 description: "A party game that mixes social deduction with trivia!"
-tags: ["Godot", "web app", "art", "game"]
+tags: ["Godot", "HTML/CSS", "JavaScript", "art", "game"]
 date: 2024-10-01
 image: "/assets/images/skoold/SK-logo.png"
 link: "https://github.com/colinstick/skoold"

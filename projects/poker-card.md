@@ -2,7 +2,7 @@
 layout: project.njk
 title: "Poker Card Maker"
 description: "A website to easily customize typical playing cards."
-tags: ["web app", "JavaScript", "HTML"]
+tags: ["JavaScript", "HTML/CSS"]
 date: 2024-10-01
 image: "/assets/images/poker/cover.png"
 link: "https://colinstick.github.io/cardmaker/"
