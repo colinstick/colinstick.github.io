@@ -5,7 +5,8 @@ description: "A version of Snake programmed directly on a graphing calculator."
 tags: ["calculator", "C", "game"]
 date: 2024-05-01
 image: "/assets/images/snake/cover.png"
-link: "https://github.com/colinstick/tisnake"
+link: ""
+github: "https://github.com/colinstick/tisnake"
 ---
 
 ## Overview

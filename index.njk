@@ -24,20 +24,34 @@ title: "Projects"
 
   <div class="projects-grid">
     {% for project in collections.projects %}
-    <a href="{{ project.url }}" class="project-card" data-tags="{{ project.data.tags | join(',') }}">
-      {% if project.data.image %}
-        <img src="{{ project.data.image }}" alt="{{ project.data.title }}" class="card-thumb">
-      {% endif %}
-      <div class="card-inner">
-        <h2>{{ project.data.title }}</h2>
-        <p class="project-desc">{{ project.data.description | safe }}</p>
-        <div class="tag-list">
-          {% for tag in project.data.tags %}
-            <span class="tag">{{ tag }}</span>
-          {% endfor %}
+    <article class="project-card" data-tags="{{ project.data.tags | join(',') }}">
+      <a href="{{ project.url }}" class="card-content-link">
+        {% if project.data.image %}
+          <img src="{{ project.data.image }}" alt="{{ project.data.title }}" class="card-thumb">
+        {% endif %}
+        <div class="card-inner">
+          <div class="card-title-row">
+            <h2>{{ project.data.title }}</h2>
+            {% if project.data.link or project.data.github %}
+              <div class="card-actions">
+                {% if project.data.link %}
+                  <a href="{{ project.data.link }}" class="card-action-btn card-action-play" aria-label="View project for {{ project.data.title }}" target="_blank" rel="noopener noreferrer">▶</a>
+                {% endif %}
+                {% if project.data.github %}
+                  <a href="{{ project.data.github }}" class="card-action-btn card-action-github" aria-label="View github for {{ project.data.title }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+          <p class="project-desc">{{ project.data.description | safe }}</p>
+          <div class="tag-list">
+            {% for tag in project.data.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
+    </article>
     {% endfor %}
   </div>
 </section>

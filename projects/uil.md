@@ -5,7 +5,8 @@ description: "My set of programs I created and used for Calculator Applications 
 tags: ["calculator", "TI-BASIC", "math"]
 date: 2023-03-01
 image: "/assets/images/uil/cover.png"
-link: "https://github.com/colinstick/uil-calc"
+link: ""
+github: "https://github.com/colinstick/uil-calc"
 ---
 
 ## Overview
