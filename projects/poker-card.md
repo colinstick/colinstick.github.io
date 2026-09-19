@@ -7,6 +7,7 @@ date: 2024-10-01
 image: "/assets/images/poker/cover.png"
 link: "https://colinstick.github.io/cardmaker/"
 github: "https://github.com/colinstick/cardmaker"
+pinned: true
 ---
 
 ## Overview

@@ -7,6 +7,7 @@ date: 2024-05-01
 image: "/assets/images/snake/cover.png"
 link: ""
 github: "https://github.com/colinstick/tisnake"
+pinned: true
 ---
 
 ## Overview

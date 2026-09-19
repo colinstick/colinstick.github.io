@@ -7,6 +7,7 @@ date: 2024-10-01
 image: "/assets/images/skoold/SK-logo.png"
 link: ""
 github: "https://github.com/colinstick/skoold"
+pinned: true
 ---
 
 ## Overview
