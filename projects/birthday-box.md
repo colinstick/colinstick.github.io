@@ -8,6 +8,9 @@ image: "/assets/images/birthday-box/cover.png"
 hidden: true
 ---
 
+this is not done!
+
+
 ## Overview
 
-I designed this in Inventor, 3D printed it out, and assembled it for my friend. I had to reteach myself some CAD because it had been several years since I last used it. It included learning how to make hinges and 
+I designed this in Inventor, 3D printed it out, and assembled it for my friend. I had to reteach myself some CAD because it had been several years since I last used it. It included learning how to make hinges and combine several connecting parts.
